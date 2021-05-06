@@ -1,0 +1,29 @@
+{
+  "name": "hdex-contracts-core",
+  "version": "0.0.1",
+  "description": "hdex-contracts-core",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-etherscan": "^2.1.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^2.3.0",
+    "@openzeppelin/contracts-ethereum-package": "^3.0.0",
+    "@openzeppelin/contracts-upgradeable": "^3.4.0",
+    "@openzeppelin/hardhat-upgrades": "^1.6.0",
+    "chai": "^4.3.0",
+    "template-file": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.2.2",
+    "ethers": "^5.0.31",
+    "hardhat": "^2.0.11",
+    "hardhat-abi-exporter": "^2.0.8",
+    "hardhat-deploy": "^0.7.0-beta.46",
+    "hardhat-deploy-ethers": "^0.3.0-beta.7",
+    "hardhat-docgen": "^1.0.3",
+    "hardhat-spdx-license-identifier": "^2.0.3",
+    "hardhat-watcher": "^2.1.1",
+    "node-fetch": "^2.6.1",
+    "shelljs": "0.8.3"
+  }
+}

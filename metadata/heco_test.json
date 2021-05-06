@@ -1,0 +1,24 @@
+{
+  "Multicall": {
+    "contractName": "Multicall",
+    "args": [],
+    "address": "0x44E520A0d458bC574390327F9382D2573B5e4D26",
+    "type": "normal"
+  },
+  "HdexFactory": {
+    "contractName": "HdexFactory",
+    "args": [],
+    "address": "0xbf7c85AA87f7A255F6265485F000DEeA39E18095",
+    "type": "normal",
+    "init_code_hash": "33950275d043d4c4915d3d32aecde1223bf5d6b9c198f62110146d0c741885dd"
+  },
+  "HdexRouter": {
+    "contractName": "HdexRouter",
+    "args": [
+      "0xbf7c85AA87f7A255F6265485F000DEeA39E18095",
+      "0x32313bE1F9083F1393bb5E6BCbBA42F080DBcEc1"
+    ],
+    "address": "0x3304380c5E5FfAE7cE7DAE63914Fe1bB540a9aa4",
+    "type": "normal"
+  }
+}
