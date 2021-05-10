@@ -8,23 +8,17 @@
   "HdexFactory": {
     "contractName": "HdexFactory",
     "args": [],
-    "address": "0x2924f5F3Bb948dB2bdDDf06cB96271AF0a455718",
+    "address": "0xbf7c85AA87f7A255F6265485F000DEeA39E18095",
     "type": "normal",
-    "init_code_hash": "6ec6185e0acb6c73793be557e4d8bc52651c58622d63a7299415b5e8d5df6e4d"
+    "init_code_hash": "33950275d043d4c4915d3d32aecde1223bf5d6b9c198f62110146d0c741885dd"
   },
   "HdexRouter": {
     "contractName": "HdexRouter",
     "args": [
-      "0x2924f5F3Bb948dB2bdDDf06cB96271AF0a455718",
-      "0x32313bE1F9083F1393bb5E6BCbBA42F080DBcEc1"
+      "0xbf7c85AA87f7A255F6265485F000DEeA39E18095",
+      "0xe4449E323dE117B4A5c543D0f4E5719B097f7C13"
     ],
-    "address": "0x64540EAA92f15Be362B088cB29f28351eb3a26f0",
-    "type": "normal"
-  },
-  "HdexRecommendedToken": {
-    "contractName": "HdexRecommendedToken",
-    "args": [],
-    "address": "0x22b5eEfeACE4718c1Db5AaD95F30C39b47220Cca",
+    "address": "0x0DdddaE7F880cc1F1c1C78b00ccBaB56e82Ea154",
     "type": "normal"
   }
 }
