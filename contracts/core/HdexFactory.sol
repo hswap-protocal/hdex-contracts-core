@@ -10,13 +10,17 @@ contract HdexFactory is IHdexFactory, HdexWhitelist{
     using SafeMath for uint;
 
     address public feeTo;
-    // 默认开发团队收到的手续费比例为1/6
-    uint256 public feeToRate = 5;
+    // 默认开发团队收到的手续费比例为1/2
+    uint256 public feeToRate = 1;
+    // 套利开关，默认关闭
+    bool public isSwapCall;
 
     mapping(address => mapping(address => address)) public getPair;
     address[] public allPairs;
 
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
+    event ChangeFeeToRate(uint256 feeToRate);
+    event ChangeSwapCall(bool indexed isSwapCall);
 
     function allPairsLength() external view returns (uint) {
         return allPairs.length;
@@ -56,5 +60,14 @@ contract HdexFactory is IHdexFactory, HdexWhitelist{
     function setFeeToRate(uint256 _rate) external onlyOwner {
         require(_rate > 0, "Hdex: FEE_TO_RATE_OVERFLOW");
         feeToRate = _rate.sub(1);
+        emit ChangeFeeToRate(feeToRate);
+    }
+
+    // 修改套利开关
+    function setSwapCall(bool _isSwapCall) external onlyOwner {
+        if(isSwapCall != _isSwapCall) {
+            isSwapCall = _isSwapCall;
+            emit ChangeSwapCall(_isSwapCall);
+        }
     }
 }

@@ -20,5 +20,11 @@
     ],
     "address": "0x0DdddaE7F880cc1F1c1C78b00ccBaB56e82Ea154",
     "type": "normal"
+  },
+  "HdexRecommendedToken": {
+    "contractName": "HdexRecommendedToken",
+    "args": [],
+    "address": "0xf0F097317dB4816292B36537edAef1f06988c887",
+    "type": "normal"
   }
 }
