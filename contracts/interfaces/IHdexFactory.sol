@@ -7,7 +7,7 @@ interface IHdexFactory {
 
     function feeTo() external view returns (address);
     function feeToRate() external view returns (uint256);
-    function isSwapCall() external view returns (bool);
+    function isFlashSwapOn() external view returns (bool);
 
     function getPair(address tokenA, address tokenB) external view returns (address pair);
     function allPairs(uint) external view returns (address pair);
@@ -17,5 +17,5 @@ interface IHdexFactory {
 
     function setFeeTo(address) external;
     function setFeeToRate(uint256) external;
-    function setSwapCall(bool) external;
+    function setFlashSwap(bool _isFlashSwapOn) external;
 }

@@ -13,14 +13,14 @@ contract HdexFactory is IHdexFactory, HdexWhitelist{
     // 默认开发团队收到的手续费比例为1/2
     uint256 public feeToRate = 1;
     // 套利开关，默认关闭
-    bool public isSwapCall;
+    bool public isFlashSwapOn;
 
     mapping(address => mapping(address => address)) public getPair;
     address[] public allPairs;
 
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
     event ChangeFeeToRate(uint256 feeToRate);
-    event ChangeSwapCall(bool indexed isSwapCall);
+    event ChangeFlashSwap(bool indexed isFlashSwapOn);
 
     function allPairsLength() external view returns (uint) {
         return allPairs.length;
@@ -64,10 +64,10 @@ contract HdexFactory is IHdexFactory, HdexWhitelist{
     }
 
     // 修改套利开关
-    function setSwapCall(bool _isSwapCall) external onlyOwner {
-        if(isSwapCall != _isSwapCall) {
-            isSwapCall = _isSwapCall;
-            emit ChangeSwapCall(_isSwapCall);
+    function setFlashSwap(bool _isFlashSwapOn) external onlyOwner {
+        if(isFlashSwapOn != _isFlashSwapOn) {
+            isFlashSwapOn = _isFlashSwapOn;
+            emit ChangeFlashSwap(_isFlashSwapOn);
         }
     }
 }
