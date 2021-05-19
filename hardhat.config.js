@@ -3,6 +3,7 @@ require("hardhat-abi-exporter");
 require("hardhat-deploy");
 require("hardhat-deploy-ethers");
 require("hardhat-spdx-license-identifier");
+require("@nomiclabs/hardhat-etherscan");
 
 const env = require("./constants");
 
@@ -52,6 +53,9 @@ module.exports = {
             accounts: [env.HECO_TEST_PRIVATE_KEY],
             saveDeployments: false
         }
+    },
+    etherscan: {
+        apiKey: "FDQTID93XZ5P349YFTHPX5M3F9FQ4493HV"
     }
 };
 

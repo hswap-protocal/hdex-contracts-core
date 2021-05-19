@@ -1,4 +1,5 @@
 const {deployments, ethers, upgrades} = require("hardhat");
+const hre = require("hardhat");
 const SettingsDao = require("../settings/SettingsDao");
 const {mkdir, ShellString} = require("shelljs");
 const { resolve } = require("path");
@@ -10,6 +11,7 @@ class ContractWrapper {
         this.contractInstanceName = contractInstanceName;
         this.settingsDao = new SettingsDao(network);
         this.network = network;
+        this.confirmations = 1;
         try {
             this.resultMetadata = require(`${this.metadataDir}/${network}`);
         } catch (e) {
@@ -24,7 +26,9 @@ class ContractWrapper {
         const {deploy} = deployments;
         const instance = await deploy(this.contractName, {
             from: await this.getSigner(),
-            args: args
+            args: args,
+            // 跳过相同合约检查，用于重复部署合约
+            fieldsToCompare: false
         });
         await ethers.provider.waitForTransaction(instance.transactionHash, this.confirmations);
         const metadata = {
@@ -86,6 +90,20 @@ class ContractWrapper {
         this.resultMetadata[this.contractInstanceName] = metadata;
         mkdir("-p", this.metadataDir);
         ShellString(JSON.stringify(this.resultMetadata, null, 2)).to(`${this.metadataDir}/${this.network}.json`);
+    }
+
+    async verify() {
+        const address = this.resultMetadata[this.contractInstanceName].address;
+        const args = this.resultMetadata[this.contractInstanceName].args;
+        console.log(address, args);
+        if(address) {
+            await hre.run("verify:verify", {
+                address: address,
+                constructorArguments: args
+            })
+        } else {
+            console.log("contract not exist!");
+        }
     }
 }
 

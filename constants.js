@@ -10,5 +10,6 @@ module.exports = {
     HECO_TEST_URL: `${process.env["HECO_TEST_URL"]}`,
     HECO_PRIVATE_KEY: `${process.env["HECO_PRIVATE_KEY"]}`,
     HECO_TEST_PRIVATE_KEY: `${process.env["HECO_TEST_PRIVATE_KEY"]}`,
+    API_KEY: `${process.env["APY_KEY"]}`,
     ROOT_DIR
 }

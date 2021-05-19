@@ -22,7 +22,7 @@ library HdexLibrary {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'33950275d043d4c4915d3d32aecde1223bf5d6b9c198f62110146d0c741885dd' // init code hash
+                hex'84bdd47042d048e1d457a021a72523f73c3dc5d408aa2eff1397ac6db5cf8b91' // init code hash
             ))));
     }
 
