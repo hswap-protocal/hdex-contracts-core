@@ -7,6 +7,10 @@ const func = async function(hre) {
     const config = contractWrapper.settingsDao.settingsCached.hdexRouter;
     const instance = await contractWrapper.deployContract(factoryWrapper.address, config.wht);
     console.log(`${contractName} deployed | address: ${instance.address}`);
+    // factory setRouter
+    const factoryInstance = await factoryWrapper.getInstance();
+    await factoryInstance.setRouter(contractWrapper.address);
+    console.log(`factory setRouter | address: ${contractWrapper.address}`);
 }
 
 func.tags = ["router"];

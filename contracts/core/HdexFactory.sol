@@ -14,6 +14,8 @@ contract HdexFactory is IHdexFactory, HdexWhitelist{
     uint256 public feeToRate = 1;
     // 套利开关，默认关闭
     bool public isFlashSwapOn;
+    // 路由地址
+    address public router;
 
     mapping(address => mapping(address => address)) public getPair;
     address[] public allPairs;
@@ -34,7 +36,7 @@ contract HdexFactory is IHdexFactory, HdexWhitelist{
     function createPair(address tokenA, address tokenB) external returns (address pair) {
         // 如果开启了白名单检查，即只有白名单用户可以添加交易对
         if(isCheck){
-            require(isInWhitelist(msg.sender) || isInWhitelist(tx.origin), "Hdex: NOT_IN_WHITELIST");
+            require(isInWhitelist(msg.sender) || msg.sender == router, "Hdex: NOT_IN_WHITELIST");
         }
         require(tokenA != tokenB, 'Hdex: IDENTICAL_ADDRESSES');
         (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
@@ -69,5 +71,10 @@ contract HdexFactory is IHdexFactory, HdexWhitelist{
             isFlashSwapOn = _isFlashSwapOn;
             emit ChangeFlashSwap(_isFlashSwapOn);
         }
+    }
+
+    function setRouter(address _router) external onlyOwner {
+        require(_router != address(0), "Hdex: ZERO_ADDRESS");
+        router = _router;
     }
 }

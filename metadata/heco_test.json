@@ -8,17 +8,17 @@
   "HdexFactory": {
     "contractName": "HdexFactory",
     "args": [],
-    "address": "0xbf7c85AA87f7A255F6265485F000DEeA39E18095",
+    "address": "0x4A4AeE3367a4949e9BcD4cc7461f9992085c0151",
     "type": "normal",
-    "init_code_hash": "33950275d043d4c4915d3d32aecde1223bf5d6b9c198f62110146d0c741885dd"
+    "init_code_hash": "84bdd47042d048e1d457a021a72523f73c3dc5d408aa2eff1397ac6db5cf8b91"
   },
   "HdexRouter": {
     "contractName": "HdexRouter",
     "args": [
-      "0xbf7c85AA87f7A255F6265485F000DEeA39E18095",
+      "0x4A4AeE3367a4949e9BcD4cc7461f9992085c0151",
       "0xe4449E323dE117B4A5c543D0f4E5719B097f7C13"
     ],
-    "address": "0x0DdddaE7F880cc1F1c1C78b00ccBaB56e82Ea154",
+    "address": "0x0611Ca4868C3Ddb46468180F9351Fc68141AE6C4",
     "type": "normal"
   },
   "HdexRecommendedToken": {

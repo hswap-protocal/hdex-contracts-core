@@ -51,6 +51,10 @@ contract HdexRouter is IHdexRouter, Ownable {
     ) internal virtual returns (uint amountA, uint amountB) {
         // create the pair if it doesn't exist yet
         if (IHdexFactory(factory).getPair(tokenA, tokenB) == address(0)) {
+            // 判断是否在白名单中
+            if(IHdexFactory(factory).isCheck()){
+                require(IHdexFactory(factory).isInWhitelist(msg.sender), "HdexRouter: NOT_IN_WHITELIST");
+            }
             IHdexFactory(factory).createPair(tokenA, tokenB);
         }
         (uint reserveA, uint reserveB) = HdexLibrary.getReserves(factory, tokenA, tokenB);
