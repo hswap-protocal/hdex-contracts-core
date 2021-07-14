@@ -2,29 +2,29 @@
   "Multicall": {
     "contractName": "Multicall",
     "args": [],
-    "address": "0x9A5DAb4685F7722a16031E20450a9B401940Ca70",
+    "address": "0xc06E771B93d1b8EC2AE33b620d08802bdcB7e9e6",
     "type": "normal"
   },
   "HdexFactory": {
     "contractName": "HdexFactory",
     "args": [],
-    "address": "0x05637380C0Bcc83e7D54FCcA6885B9fb58DB10cd",
+    "address": "0x996cf903b1C22d3871001C263AF1994715a47443",
     "type": "normal",
     "init_code_hash": "1b26148fea939f3c495c48af7be221ecb79391888cd95e6175b4c98bec1c6b5d"
   },
   "HdexRouter": {
     "contractName": "HdexRouter",
     "args": [
-      "0x05637380C0Bcc83e7D54FCcA6885B9fb58DB10cd",
+      "0x996cf903b1C22d3871001C263AF1994715a47443",
       "0xe4449E323dE117B4A5c543D0f4E5719B097f7C13"
     ],
-    "address": "0xb569Bf39FD5128b0d00c9d44728eb18d556ec32F",
+    "address": "0x4CCDC27CFf0AD2cfbfe244C8f26A876E6A3aB3bF",
     "type": "normal"
   },
   "HdexRecommendedToken": {
     "contractName": "HdexRecommendedToken",
     "args": [],
-    "address": "0x6BFeB1239165D35FDa8Dc399F4Cbb075A8799689",
+    "address": "0x8C93F33Df38D18626Be86755c27D5Ce7993e010D",
     "type": "normal"
   }
 }

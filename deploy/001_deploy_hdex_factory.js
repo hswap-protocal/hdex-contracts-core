@@ -6,6 +6,8 @@ const func = async function(hre) {
     const contractWrapper = new ContractWrapper(hre.network.name, contractName, contractName);
     const instance = await contractWrapper.deployContract();
     const contract = await contractWrapper.getInstance();
+    // open whitelist
+    await contract.changeCheck(true);
     let init_code_hash = await contract.getInitCode();
     init_code_hash = init_code_hash.replace("0x", "");
     let metadata = contractWrapper.metadata;
